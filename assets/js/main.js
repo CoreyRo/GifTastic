@@ -16,10 +16,12 @@ $(document).ready(function($) {
 			$(this).attr("src", animated);
 			$(this).removeClass("gifStill")
 			$(this).addClass("focus");
+			$(this).parent().closest('div').removeClass("gifStill");
 		} else {
 			$(this).attr("data-state", "still");
 			$(this).attr("src", still);
 			$(this).removeClass("focus");
+			$(this).parent().closest('div').addClass("gifStill");
 
 		}
 
