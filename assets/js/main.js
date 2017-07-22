@@ -51,7 +51,7 @@ $(document).ready(function($) {
 	function gifSearch(value) {
 		$("#gif-view").hide();
 		$("#gif-view").show(200);
-		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + value + "&offset=" + offset + "&api_key=" + apiKey + "&limit=" + limit;
+		var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + value + "&offset=" + offset + "&api_key=" + apiKey + "&limit=" + limit;
 
 		// var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=" + apiKey + "&tag=" + value;
 
