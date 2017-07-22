@@ -1,0 +1,28 @@
+body{
+	
+}
+.gifImgs{
+	position: relative;
+	}
+
+.gifStill{
+	padding: 5px;
+	overflow: hidden;
+}
+img{
+	transition: .2s;
+}
+.container, #buttons-view, #gif-view, #gif-form{
+	position: relative;
+}
+.focus{
+	z-index:999 !important;
+	position: relative;
+	max-width:300px;
+	box-shadow: 15px 15px 6px black;
+	transition: transform .5s;
+	transform: scale(1.1);
+}
+body {
+  padding: 3em;
+}
