@@ -1,5 +1,5 @@
 $(document).ready(function($) {
-
+	$("#gif-view").hide();
 	var apiKey = "dc6zaTOxFJmzC";
 	var limit = 24;
 	var recent = ["Meme", "Reaction", "FAILS", "Cat"];
@@ -20,13 +20,14 @@ $(document).ready(function($) {
 			$(this).attr("data-state", "still");
 			$(this).attr("src", still);
 			$(this).removeClass("focus");
-			
+
 		}
 
 	}
 
 	function renderButtons() {
 		$("#buttons-view").empty();
+		$("#buttons-view").prepend("<h2>Recent Searches</h2>")
 
 		for (var i = 0; i < recent.length; i++) {
 			var a = $("<button>");
@@ -46,6 +47,8 @@ $(document).ready(function($) {
 	}
 
 	function gifSearch(value) {
+		$("#gif-view").hide();
+		$("#gif-view").show(200);
 		var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + value + "&offset=" + offset + "&api_key=" + apiKey + "&limit=" + limit;
 
 		// var queryURL = "http://api.giphy.com/v1/gifs/random?api_key=" + apiKey + "&tag=" + value;
@@ -56,14 +59,20 @@ $(document).ready(function($) {
 				method: "GET"
 			})
 			.done(function(response) {
+				var load = $("<img id='loadgif' class='img-responsive center-block'>");
+				load.attr("src", "assets/img/loading.gif");
+				$("#loading").append(load);
 				var results = response.data;
 				console.log(results);
 				for (var i = 0; i < results.length; i++) {
 					var gifDiv = $("<div class='col-md-4 item gifStill gifImgs'>");
+					
+					
 					var gifStill = results[i].images.fixed_height_still.url;
 					console.log(gifStill)
 
 					var gifImg = $("<img class='center-block still'>");
+					
 					gifImg.attr("data-still", results[i].images.fixed_height_still.url)
 					gifImg.attr("data-animate", results[i].images.original.url)
 					gifImg.attr("data-state", "still");
@@ -72,7 +81,21 @@ $(document).ready(function($) {
 
 					gifDiv.append(gifImg);
 
-					$("#gif-view").prepend(gifDiv);
+					$("#gif-view").hide().prepend(gifDiv);
+					
+					
+
+				}
+
+				var instruction= $("<h3 id='inst'>");
+				instruction.text("Click the image to play the gif, click again to stop")
+				$("#gif-view").prepend(instruction)
+				setTimeout(wait, 2000);
+				function wait(){
+					$("#loading").empty();
+					$("#gif-view").show(200);
+					
+					
 				}
 				
 

@@ -1,5 +1,56 @@
 body{
-	
+	background-color: black;
+	color:white;
+}
+h1{
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 2px solid white;
+
+}
+h2{
+	border-bottom: 2px solid white;
+}
+#inputDiv{
+	border:2px solid white;
+	border-radius: 8px;
+	padding-bottom: 10px;
+}
+#gif-form{
+	color:black;
+
+}
+#gif-input{
+	color:black;
+	margin-left: -10px;
+
+}
+#add-gif{
+	color: white;
+	background-color: green !important;
+	border-radius: 3px;
+}
+#inst{
+	text-align: center;
+	text-shadow: 2px 2px 1px black;
+	margin-bottom: 20px;
+}
+.recentgif{
+	background: #4af;
+    background: -webkit-linear-gradient(#5bf, #47a); 
+    background: -o-linear-gradient(#5bf, #47a); 
+    background: -moz-linear-gradient(#5bf, #47a); 
+    background: linear-gradient(#5bf, #47a);
+    border:1px solid white !important;
+    border-radius: 4px !important;
+    margin:0 2px 10px 0;
+}
+.jumbotron{
+ 	background: #4af;
+    background: -webkit-linear-gradient(#5bf, #47a); 
+    background: -o-linear-gradient(#5bf, #47a); 
+    background: -moz-linear-gradient(#5bf, #47a); 
+    background: linear-gradient(#5bf, #47a); 
 }
 .gifImgs{
 	position: relative;
